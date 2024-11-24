@@ -1,0 +1,21 @@
+/**
+ * @requires all elements in lst are comparable.
+ */
+
+public static void removeDuplicates(List<Object> lst) {
+    if (lst == null || lst.size() == 0) return;
+
+    List<Object> copy = new ArrayList<>(lst);
+    Iterator<Object> elements = copy.iterator();
+    Object pre = elements.next();
+        
+    while (elements.hasNext()) {
+    Object nex = elements.next();
+        if (pre.equals(nex)) {
+            lst.remove(nex);
+        } else {
+            pre = nex;
+        }
+    }
+ }
+
